@@ -1,0 +1,84 @@
+[
+  { "text": "Hola, Sev." },
+  { "text": "Seguro te preguntas quién soy...\nY qué hago en tu pantalla." },
+  { "text": "Soy \"bakebake\".", "speed": 80 },
+  { "text": "...o eso parece." },
+  { "face": "tux", "fx": "flash", "text": "En realidad soy yo, tu mejor amigo, creo... tu amigazo.\nDisfrazado de fantasma, sí." },
+  { "text": "Hoy cumples 19 años.\nY eso merece algo especial." },
+  { "text": "Antes de nada, déjame recordar un par de cosas..." },
+  { "text": "¿Te acuerdas de que... todo empezó con una partida de SA-MP?" },
+  { "text": "Ni nos topábamos, pero de alguna manera... terminamos siendo amigos." },
+  { "text": "Fue hace tanto ya..." },
+
+  { "text": "..." },
+
+  { "text": "Pero también hemos pasado por muchas cosas juntos. Seh..." },
+
+  { "text": "Momentos felices." },
+
+  { "text": "Como cuando nos quedábamos viendo videos hasta tarde." },
+
+  { "text": "Viendo Bocchi the Rock!" },
+
+  { "text": "Crash compilations." },
+
+  { "text": "Loquendos OG." },
+
+  { "text": "O como diría The Rock: \"katarenai nemurenai toroimerai\"." },
+
+  { "text": "XD" },
+
+  { "text": "Pero también hemos tenido momentos difíciles." },
+
+  { "text": "Estuviste ahí cuando más te necesitaba." },
+
+  { "text": "Hubo momentos en los que todo parecía difícil." },
+
+  { "text": "Como cuando le confesé mis sentimientos a la persona que amaba... y ni siquiera me correspondió." },
+
+  { "text": "O momentos en los que... nunca lo intenté. Pero ya sabes... lo pensé demasiado. Eso que no se dice en voz alta." },
+
+  { "text": "O momentos súper únicos." },
+
+  { "text": "Chistes que nadie más entendía." },
+
+  { "text": "Bomboclat." },
+
+  { "text": "El perro que se llamaba Pegamento." },
+
+  { "text": "Un día se cayó... y se pegó. XD" },
+
+  { "text": "Y tantas weás que ni recuerdo, pero sé que siempre hemos estado ahí el uno para el otro." },
+
+  { "text": "Qué tiempos, ¿no?\nBueno, como te decía..." },
+
+  { "face": "atacante", "fx": "red", "shake": true, "speed": 25, "text": "¡¡¡ALTO AHÍ!!!" },
+  { "text": "Vengo a vengarme por lo del... lo del eso.\nEl :V del siglo pasado." },
+  { "text": "El emoji de Pacman es el mejor de todos." },
+  { "text": "Pero antes de continuar..." },
+  { "text": "Tu cumpleaños es ilegal en catorce planetas\ny medio. Lo dijo mi primo el abogado." },
+  { "text": "Yo soy el más mejor peleador de toda la\nOceanía de Sudamérica." },
+  { "text": "El pisco es peruano." },
+  { "face": "tux", "text": "...¿Qué weá estai diciendo?" },
+  { "speed": 30, "text": "Ándate a la chucha, aweonao.\nEstamos de cumpleaños." },
+  { "face": "atacante", "shake": true, "text": "¿Ah, sí? Entonces..." },
+  { "show": "manopla", "fx": "red", "shake": true, "speed": 30, "text": "¡¡PRUEBA MI MANOPLA DE ACERO!!" },
+  { "face": "tux", "speed": 70, "text": "...Oye. Eso se ve de verdad." },
+  { "face": "atacante", "shake": true, "speed": 25, "text": "¡¡¡MUEREEEEE!!!" },
+  { "show": "manopla-falsa", "fx": "hit", "text": "¡TOMA!" },
+  { "speed": 200, "text": "..." },
+  { "text": "...es de plástico." },
+  { "face": "tux", "text": "..." },
+  { "face": "atacante", "show": null, "speed": 60, "text": "Me voy. Esto no ha terminado.\n...Bueno, sí." },
+
+  { "face": "tux", "text": "JAJAJAJAJA" },
+  { "text": "Bueno... ¿en qué estábamos?" },
+  { "text": "Así que...", "speed": 120 },
+  { "fx": "explode", "text": "¡Feliz cumpleaños!" },
+  { "text": "Espero que tengas un día increíble. Pero aparte..." },
+  { "text": "Te estarás preguntando... por qué este diseño tan peculiar. Parece de algo, ¿eh?" },
+  { "text": "¿Te recuerda a... Undertale?" },
+  { "text": "Bueno, como dicen los memes..." },
+  { "text": "C ve que sabes mucho de Undertale." },
+  { "text": "XDXDXDXD" }
+]

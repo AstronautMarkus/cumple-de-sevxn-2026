@@ -1,0 +1,334 @@
+{
+  "welcome": [
+    {
+      "face": "tux",
+      "text": "Bueno, bienvenido a la fiesta."
+    },
+    {
+      "text": "Te recopilé algunos de los mejores momentos\nque hemos pasado, en fotos."
+    },
+    {
+      "text": "Te pido disculpas si faltan muchos, porque la verdad tenemos más de 300.000 mensajes."
+    },
+    {
+      "text": "Han pasado tantas cosas, tantos recuerdos, que simplemente... no caben en este lugar.\nEn fin, amigo..."
+    },
+    {
+      "text": "Pincha las que quieras para verlas.\nYo te voy comentando."
+    },
+    {
+      "text": "Ojalá te traigan buenos recuerdos."
+    },
+    {
+      "text": "Cuando estés listo, presiona el botón\n\"Estoy listo\"."
+    }
+  ],
+  "items": [
+    {
+      "img": "2020/team-majo-discord-2020.png",
+      "caption": "Team Majo Discord, la primera portada de nuestro servidor. Nuestro querido servidor de Discord.",
+      "comment": [
+        {
+          "text": "En ese tiempo... no parábamos de decir Dou, Nashe y demás."
+        },
+        {
+          "text": "La estupidez de esos días. Brillante."
+        }
+      ]
+    },
+    {
+      "img": "2020/chat-payday.png",
+      "caption": "Banner de Twitch que usaba, que me hiciste.",
+      "comment": [
+        {
+          "text": "Shiny Chariot... mi primera waifu de verdad."
+        },
+        {
+          "text": "Qué recuerdos de esos streams. Gracias por el banner."
+        }
+      ]
+    },
+    {
+      "img": "2020/sale-fortnite.png",
+      "caption": "¿Sale Fortnite?",
+      "comment": [
+        {
+          "text": "Todos los días Fortnite por la cuarentena, ¿eh?"
+        }
+      ]
+    },
+    {
+      "img": "2020/owo.png",
+      "caption": "'OwO'",
+      "comment": [
+        {
+          "text": "Así decía la foto original. OwO"
+        }
+      ]
+    },
+    {
+      "img": "2020/gem-alert.png",
+      "caption": "Gem Alert",
+      "comment": [
+        {
+          "text": "LA ENCONTRÉ."
+        },
+        {
+          "text": "No puedo creer que la haya encontrado después de tanto tiempo."
+        },
+        {
+          "text": "Esto me trae tantos recuerdos."
+        },
+        {
+          "text": "PayDay y Softo. Gansix."
+        },
+        {
+          "text": "Las leyendas del GTA."
+        }
+      ]
+    },
+    {
+      "img": "2020/gem-alert-2.png",
+      "caption": "Gem Alert 2!!!",
+      "comment": [
+        {
+          "text": "Weón, ese día fue épico."
+        },
+        {
+          "text": "Había ido a relajarme con mi familia a un campo con piscina."
+        },
+        {
+          "text": "Estaba en mi prime en ese tiempo."
+        },
+        {
+          "text": "A la noche echamos unos SA-MP y MTA. Servidor chileno."
+        },
+        {
+          "text": "Inolvidable."
+        }
+      ]
+    },
+    {
+      "img": "2020/basket.png",
+      "caption": "Puro drip nosotros, en el San Andro.",
+      "comment": [
+        {
+          "text": "Ese día fue legendario, ¿sabes? Tuve un sueño tremendo: el final de mi manga favorito se acercaba. Lo había soñado con todo detalle. Y fue real. Esa foto igual me trae recuerdos de ese momento."
+        }
+      ]
+    },
+    {
+      "img": "2020/cascraf.png",
+      "caption": "Nuestras skins en el video de Cascraf",
+      "comment": [
+        {
+          "text": "Ese weón era re estúpido, pero chistoso XD. La voz re culiá que te puso igual en el Loquendo. Hell naw."
+        }
+      ]
+    },
+    {
+      "img": "2020/dark-fantasy.png",
+      "caption": "Fantasía oscura",
+      "comment": [
+        {
+          "text": "Esta foto te quedó pulenta XD"
+        }
+      ]
+    },
+    {
+      "img": "2020/gang.png",
+      "caption": "Robando el banco",
+      "comment": [
+        {
+          "text": "Flash y dos OC robando el banco mientras corren. Cine."
+        }
+      ]
+    },
+    {
+      "img": "2020/gem.png",
+      "caption": "GEMA LEGENDARIA",
+      "comment": [
+        {
+          "text": "Sé que el plano no es bueno. No te gustan esas cosas, pero lo que importa es el video de atrás."
+        },
+        {
+          "text": "Lost media y gema. Turn down for what."
+        }
+      ]
+    },
+    {
+      "img": "2020/gtav.jpg",
+      "caption": "Nuestros OC en el GTA V",
+      "comment": [
+        {
+          "text": "Cuando Deaduri era compa... y no nos reemplazó por una mujer. Bueno, la tipca, como dicen los lolos."
+        }
+      ]
+    },
+    {
+      "img": "2020/lndsa.png",
+      "caption": "LNDSA",
+      "comment": [
+        {
+          "text": "Bienvenidos a Loquendo City!!!"
+        }
+      ]
+    },
+    {
+      "img": "2020/luis.png",
+      "caption": "Luis",
+      "comment": [
+        {
+          "text": "Luis."
+        }
+      ]
+    },
+    {
+      "img": "2020/navidad-2020.png",
+      "caption": "Especial de navidad 2020",
+      "comment": [
+        {
+          "text": "Nuestro auge en el Loquendo: este video fue joyita. Todos los amigos que éramos alguna vez salieron ahí."
+        }
+      ]
+    },
+    {
+      "img": "2020/nuestros-skins.png",
+      "caption": "Nuestros skins",
+      "comment": [
+        {
+          "text": "Nuestro primer evento de Fortnite juntos. Tremenda joya la que venía después de ese."
+        }
+      ]
+    },
+    {
+      "img": "2020/primer-evento-fortnite.png",
+      "caption": "Primer evento de Fortnite",
+      "comment": [
+        {
+          "text": "Lo mismo que la otra foto: nuestro primer evento de Fortnite juntos. Cine."
+        }
+      ]
+    },
+    {
+      "img": "2020/roblox.png",
+      "caption": "Troleando en Roblox",
+      "comment": [
+        {
+          "text": "¿Te das cuenta de que si nos vieran ahora haciendo esas mierdas estaríamos en problemas...?"
+        }
+      ]
+    },
+    {
+      "img": "2020/troleo-dani.png",
+      "caption": "Troleo a Dani",
+      "comment": [
+        {
+          "text": "¿Me estás vacilando... conchetumare? XD"
+        }
+      ]
+    },
+    {
+      "img": "2020/video-legendario.png",
+      "caption": "El mejor video Loquendo de la época",
+      "comment": [
+        {
+          "text": "Markitos, Sergio, CJ, Seven, el Gato de los cojones y todas las leyendas... Terminator de mierda, que te cagaste con los helados."
+        }
+      ]
+    },
+    {
+      "img": "2020/xd.png",
+      "caption": "El primer ragebait de la historia",
+      "comment": [
+        {
+          "text": "A ese weón le decías algo y explotaba XD"
+        }
+      ]
+    }
+  ],
+  "ready": [
+    {
+      "face": "tux",
+      "text": "¿Estás listo?",
+      "choices": [
+        "Sí",
+        "No"
+      ],
+      "cancel": "No"
+    },
+    {
+      "text": "¿Seguro?",
+      "choices": [
+        "Sí",
+        "No"
+      ],
+      "cancel": "No"
+    },
+    {
+      "text": "¿Pero seguro seguro?\nMira que no hay vuelta atrás.",
+      "choices": [
+        "Sí",
+        "No"
+      ],
+      "cancel": "No"
+    },
+    {
+      "speed": 70,
+      "text": "¿100% seguro?\n¿Lo juras por el Pacman :V?",
+      "choices": [
+        "Sí",
+        "No"
+      ],
+      "cancel": "No"
+    },
+    {
+      "text": "Ok, ok. Última vez, lo prometo.\n¿Seguro?",
+      "choices": [
+        "Sí",
+        "También sí"
+      ]
+    },
+    {
+      "text": "JAJAJA ya, ya. Te creo."
+    },
+    {
+      "speed": 90,
+      "text": "Apaga las luces..."
+    }
+  ],
+  "notReady": [
+    {
+      "face": "tux",
+      "text": "Ah, ya. Sigue mirando entonces.\nSin apuro."
+    }
+  ],
+  "song": [
+    "Cumpleaños feliz",
+    "te deseamos a ti",
+    "cumpleaños, querido Seven Jackson",
+    "que los cumplas feliz"
+  ],
+  "final": [
+    {
+      "face": "tux",
+      "fx": "explode",
+      "text": "¡¡FELIZ CUMPLEAÑOS, SEVXN!!"
+    },
+    {
+      "text": "Gracias por todos estos años, amigazo."
+    },
+    {
+      "text": "Por las risas, las weás y por estar\ncuando más se necesitaba."
+    },
+    {
+      "text": "Que este nivel nuevo venga con todo."
+    },
+    {
+      "text": "¡A prepararse para la nueva faceta! El DUOC te espera."
+    },
+    {
+      "text": "¡Échale ganas, Sevxn!"
+    }
+  ]
+}

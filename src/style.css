@@ -1,0 +1,356 @@
+:root {
+  --bg: #070203;
+  --blood: #8b0000;
+  --red: #d10a1e;
+  --glow: #ff2a3d;
+  --ink: #eadbdb;
+  --muted: #8a6f72;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, #3a0308 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, #2a0206 0%, transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "VT323", monospace;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#embers { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+/* film grain + scanlines, the WLR xerox feel */
+.grain {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,.25) 0 1px, transparent 1px 3px);
+  mix-blend-mode: multiply;
+}
+
+@keyframes pulse { 50% { opacity: .35; } }
+.fade-in { animation: fadein 1.2s ease-out; }
+@keyframes fadein { from { opacity: 0; } }
+
+/* ---------- Intro ---------- */
+.intro {
+  position: fixed; inset: 0; z-index: 10;
+  background: #000;
+  display: flex;
+  cursor: pointer; user-select: none;
+  transition: opacity 1s;
+}
+.intro.leaving { opacity: 0; }
+
+.press {
+  margin: auto; padding: 40px; color: #fff; font-size: 1.6rem; letter-spacing: .1em;
+  animation: pulse 1.6s infinite;
+}
+
+/* ---------- Dialog: Undertale chatbox ---------- */
+.dialog-layer {
+  position: fixed; inset: 0; z-index: 20;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 16px 16px 10vh;
+  cursor: pointer; user-select: none;
+}
+.house .dialog-layer { background: rgba(0, 0, 0, .55); padding-bottom: 4vh; }
+
+.chatbox {
+  width: 100%; max-width: 680px; min-height: 150px;
+  display: flex; gap: 20px; align-items: flex-start;
+  background: #000; border: 5px solid #fff;
+  padding: 18px 22px;
+  color: #fff;
+}
+.portrait { flex: none; width: 104px; height: 104px; }
+.portrait img, .portrait canvas { width: 100%; height: 100%; display: block; object-fit: cover; }
+.portrait [hidden] { display: none; }
+
+.dialog { display: flex; gap: 14px; font-size: 1.9rem; line-height: 1.15; }
+.dialog .text { white-space: pre-wrap; }
+
+.noface {
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  border: 2px dashed #555; color: #555; font-size: 3rem;
+}
+
+@media (max-width: 520px) {
+  .chatbox { gap: 12px; padding: 12px; min-height: 120px; }
+  .portrait { width: 64px; height: 64px; }
+  .dialog { font-size: 1.45rem; gap: 8px; }
+}
+
+/* ---------- Dialog fx ---------- */
+.flash {
+  position: fixed; inset: 0; z-index: 21; pointer-events: none;
+  background: #fff;
+  animation: flash .5s ease-out forwards;
+}
+.flash.explode {
+  background: radial-gradient(circle at 50% 60%, #fff 0%, #ff2a3d 35%, #3a0308 75%);
+  animation-duration: 1.2s;
+}
+.flash.red { background: #d10a1e; animation-duration: .8s; }
+.flash.hit { background: #fff; opacity: .5; animation-duration: .25s; }
+@keyframes flash { to { opacity: 0; } }
+
+.burst { position: fixed; inset: 0; z-index: 22; pointer-events: none; }
+
+/* showcased items ("show") + angry portraits ("shake") */
+.item {
+  position: fixed; z-index: 21; left: 50%; top: 8vh;
+  width: min(60vw, 320px); aspect-ratio: 1; object-fit: cover;
+  border: 5px solid #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 0 40px #d10a1e, 0 0 120px #8b0000;
+  pointer-events: none;
+}
+.item.jitter { animation: slam .5s cubic-bezier(.2, 1.6, .4, 1) both, jitter .12s steps(2) .5s infinite; }
+/* the plastic one bounces in like a toy instead of slamming */
+.item.manopla-falsa { box-shadow: 0 0 40px #ff8fa3; }
+.item.manopla-falsa.jitter { animation: boing .8s ease-out both, jitter .25s steps(2) .8s infinite; }
+
+@keyframes slam {
+  from { transform: translateX(-50%) scale(3) rotate(-25deg); opacity: 0; }
+}
+@keyframes boing {
+  0%   { transform: translateX(-50%) scale(.2); }
+  40%  { transform: translateX(-50%) scale(1.25, .7); }
+  60%  { transform: translateX(-50%) scale(.85, 1.2); }
+  80%  { transform: translateX(-50%) scale(1.05, .95); }
+}
+@keyframes jitter {
+  0%   { transform: translateX(-50%) translate(-3px, 2px) rotate(-1deg); }
+  100% { transform: translateX(-50%) translate(3px, -2px) rotate(1deg); }
+}
+
+.portrait.shake { animation: rattle .1s steps(2) infinite; }
+@keyframes rattle {
+  0%   { transform: translate(-3px, 2px); }
+  100% { transform: translate(3px, -2px); }
+}
+
+/* ---------- House: the party room ---------- */
+.house {
+  position: relative; z-index: 2;
+  height: 100dvh; overflow-y: auto;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 20px; padding: 90px 16px 40px;
+}
+
+.title {
+  font-family: "UnifrakturMaguntia", serif; font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3.4rem); text-align: center;
+  color: var(--red); text-shadow: 0 0 18px var(--blood);
+}
+
+/* bunting with one letter per flag, hanging in a slight curve */
+.bunting {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1;
+  display: flex; justify-content: center; gap: 4px;
+  padding-top: 6px; pointer-events: none;
+  border-top: 2px solid #3b1a0e;
+}
+.bunting span {
+  width: min(6vw, 46px); height: min(8vw, 58px);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  display: grid; justify-items: center; padding-top: 4px;
+  font-family: "UnifrakturMaguntia", serif; font-size: min(4vw, 1.6rem);
+  background: var(--red); color: #fff;
+  transform: translateY(calc(var(--d, 0) * 1px));
+}
+.bunting span:nth-child(3n + 2) { background: #f2ece4; color: var(--blood); }
+.bunting span:nth-child(3n) { background: #1a0507; color: var(--red); }
+.bunting span.gap { visibility: hidden; width: min(3vw, 20px); }
+
+.balloons { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
+.balloons span {
+  position: absolute; bottom: -20px;
+  left: calc(var(--i) * 23% + 2%);
+  width: 60px; height: 74px; border-radius: 50% 50% 48% 48%;
+  background: radial-gradient(circle at 32% 28%, rgba(255,255,255,.5) 0 8%, transparent 9%), var(--c);
+  box-shadow: inset -8px -10px 0 rgba(0,0,0,.25);
+  opacity: .8;
+  animation: bob calc(4s + var(--i) * .7s) ease-in-out infinite alternate;
+}
+.balloons span:nth-child(odd) { bottom: 30%; }
+.balloons span::after {
+  content: ""; position: absolute; left: 50%; top: 100%;
+  width: 1px; height: 90px; background: rgba(255,255,255,.35);
+}
+@keyframes bob { to { transform: translateY(-24px) rotate(4deg); } }
+
+/* frames auto-arranged; House sets --size */
+.gallery {
+  container-type: inline-size;
+  width: min(100%, 960px);
+  display: flex; flex-wrap: wrap; gap: 32px 40px;
+  justify-content: center; align-items: center;
+  padding: 10px 0;
+  position: relative; z-index: 2;
+}
+
+.thing {
+  /* same area for every frame: width = size * sqrt(ratio), height follows the photo */
+  --ratio: 4 / 3;
+  width: calc(var(--size) * sqrt(var(--ratio)));
+  transform: rotate(var(--rot));
+  border: none; background: none; cursor: pointer; padding: 0;
+  transition: transform .15s, filter .15s;
+}
+.thing:hover, .thing:focus-visible {
+  transform: rotate(var(--rot)) scale(1.06);
+  filter: drop-shadow(0 0 12px var(--glow));
+  outline: none;
+}
+.thing img, .thing .noface { width: 100%; aspect-ratio: var(--ratio); object-fit: cover; display: block; }
+.thing .noface { font-size: 2rem; }
+
+/* "frame": dark wooden picture frame */
+.thing.frame { border: 6px solid #3b1a0e; outline: 2px solid #120604; box-shadow: 0 8px 14px rgba(0,0,0,.6); }
+/* "polaroid": white border, fat bottom */
+.thing.polaroid {
+  background: #f2ece4; box-shadow: 0 8px 14px rgba(0,0,0,.6);
+  padding: calc(var(--size) * .05) calc(var(--size) * .05) calc(var(--size) * .18);
+}
+
+.ready {
+  position: relative; z-index: 2;
+  margin-top: 12px; padding: 12px 34px;
+  background: var(--red); color: #fff; border: 4px solid #fff;
+  font: inherit; font-size: 1.8rem; letter-spacing: .08em; cursor: pointer;
+  box-shadow: 0 0 24px var(--blood);
+  animation: pulse-glow 1.6s ease-in-out infinite;
+}
+.ready:hover, .ready:focus-visible { background: #fff; color: var(--red); outline: none; }
+@keyframes pulse-glow { 50% { box-shadow: 0 0 48px var(--glow); } }
+
+/* Undertale choices under the dialog text */
+.dialog-body { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.choices { display: flex; gap: 40px; padding-left: 28px; flex-wrap: wrap; }
+.choices button {
+  background: none; border: none; color: #fff; cursor: pointer;
+  font: inherit; font-size: 1.9rem; display: flex; align-items: center; gap: 8px;
+}
+.choices button.on { color: #ffd800; }
+.choices .soul { width: 1em; color: #ff0000; font-size: 1.4rem; }
+
+/* ---------- Finale: lights off, cake, song ---------- */
+.finale {
+  position: fixed; inset: 0; z-index: 18;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  padding: 16px;
+  background: radial-gradient(circle at 50% 55%, rgba(255, 140, 40, .22), #000 55%);
+  animation: fadein 1.5s ease-out;
+}
+.finale.done, .finale.words {
+  background: radial-gradient(circle at 50% 55%, rgba(209, 10, 30, .35), #070203 65%);
+}
+
+.lyric {
+  min-height: 2.4em; text-align: center;
+  font-family: "UnifrakturMaguntia", serif; font-size: clamp(2rem, 7vw, 3.6rem);
+  color: #fff; text-shadow: 0 0 20px var(--glow);
+}
+
+.cake {
+  position: relative; width: min(70vw, 300px); aspect-ratio: 1;
+  background: none; border: none; padding: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+}
+.cake:enabled { cursor: pointer; }
+.cake:enabled:hover { filter: drop-shadow(0 0 20px rgba(255, 170, 60, .6)); }
+
+.candles { display: flex; gap: 10%; margin-bottom: -2px; }
+.candle {
+  position: relative;
+  font-family: "Space Mono", monospace; font-weight: 700;
+  font-size: min(18vw, 78px); line-height: 1;
+  color: #f2ece4; -webkit-text-stroke: 3px var(--red);
+}
+.flame, .smoke {
+  position: absolute; left: 50%; bottom: 100%;
+  width: 18px; height: 30px; margin-left: -9px;
+}
+.flame {
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 50% 75%, #fff 0 18%, #ffd800 35%, #ff7a00 70%, transparent 72%);
+  box-shadow: 0 0 22px 8px rgba(255, 150, 0, .45);
+  transform-origin: 50% 90%;
+  animation: flicker .18s ease-in-out infinite alternate;
+}
+@keyframes flicker {
+  from { transform: rotate(-4deg) scaleY(1); }
+  to   { transform: rotate(4deg) scaleY(1.12); }
+}
+.smoke {
+  border-radius: 50%;
+  background: rgba(200, 200, 200, .4);
+  animation: smoke 1.6s ease-out forwards;
+}
+@keyframes smoke { to { transform: translateY(-60px) scale(2.4); opacity: 0; } }
+
+.tier { display: block; position: relative; border-radius: 10px 10px 4px 4px; }
+.tier::before {
+  /* red frosting dripping over the edge */
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 38%;
+  border-radius: 10px 10px 0 0;
+  background:
+    radial-gradient(circle at 50% 0, var(--red) 0 60%, transparent 62%) 0 100% / 22px 22px repeat-x,
+    linear-gradient(var(--red), var(--red)) 0 0 / 100% calc(100% - 11px) no-repeat;
+}
+.tier.top { width: 62%; height: 30%; background: #1a0507; }
+.tier.bottom { width: 92%; height: 36%; background: #12030a; border-top: 2px solid #000; }
+.plate { display: block; width: 104%; height: 5%; border-radius: 50%; background: #c9c0b8; }
+
+.hint-blow { font-size: 1.6rem; text-align: center; animation: pulse 1.6s infinite; }
+
+.the-end { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.the-end h1 {
+  font-family: "UnifrakturMaguntia", serif; font-weight: 400;
+  font-size: clamp(2.6rem, 10vw, 5rem); color: var(--red);
+  text-shadow: 0 0 20px var(--glow), 0 0 60px var(--blood);
+}
+.the-end .lvl { font-size: 1.6rem; letter-spacing: .15em; color: var(--ink); }
+.the-end .lvl b { color: var(--glow); }
+
+/* ---------- Viewer: draggable photo ---------- */
+.viewer {
+  position: fixed; inset: 0; z-index: 15;
+  background: rgba(0, 0, 0, .75);
+  display: grid; place-items: center; padding: 16px;
+}
+.viewer figure {
+  position: relative;
+  width: min(86vw, 460px);
+  background: #f2ece4; color: #1a0507;
+  padding: 16px 16px 12px;
+  box-shadow: 0 0 40px var(--blood), 0 20px 40px rgba(0,0,0,.8);
+  cursor: grab; touch-action: none; user-select: none;
+  /* backwards fill only: after the drop the inline drag transform must win */
+  animation: drop .35s cubic-bezier(.2, 1.4, .4, 1) backwards;
+}
+@keyframes drop { from { transform: scale(1.6) rotate(-8deg); opacity: 0; } }
+.viewer figure:active { cursor: grabbing; }
+.viewer figure img, .viewer figure .noface { width: 100%; max-height: 60vh; object-fit: contain; display: block; }
+.viewer figure .noface { aspect-ratio: 1; }
+.viewer figcaption { font-size: 1.6rem; text-align: center; padding-top: 10px; line-height: 1.1; }
+.viewer .close {
+  position: absolute; top: -18px; right: -18px;
+  width: 40px; height: 40px;
+  background: var(--red); color: #fff; border: 3px solid #000;
+  font: inherit; font-size: 1.6rem; cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewer figure, .balloons span, .ready, .flame { animation: none; }
+}
+
+.rickroll {
+  position: fixed; inset: 0; z-index: 30;
+  width: 100%; height: 100%; border: none; background: #000;
+  animation: fadein .4s ease-out;
+}
